@@ -6,6 +6,9 @@ our company, udacity.
 ```From Wikipedia```
 Jasmine is an open source testing framework for JavaScript.[4] It aims to run on any JavaScript-enabled platform, to not intrude on the application nor the IDE, and to have easy-to-read syntax. It is heavily influenced by other unit testing frameworks, such as ScrewUnit, JSSpec, JSpec, and RSpec.
 
+```For More info```
+https://jasmine.github.io/
+
 ## Project Objective
 * No test should be dependent on the results of another
 * Callbacks should be used to ensure that feeds are loaded before they are tested
