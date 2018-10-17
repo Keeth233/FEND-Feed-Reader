@@ -123,17 +123,24 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-        let feedOne; //undefined variable
-        let feedTwo = document.querySelector('.feed'); //select feed class
+         //undefined variables for feeds
+        let feedOne;
+        let feedTwo;
 
         beforeEach(function(done) {
 
-            loadFeed(0, function() {
+            loadFeed(0);
 
-                feedOne = $('.feed').innerText;
+            feedOne = $('.feed')[0].innerText; //select feed class
+            done();
+        });
 
-                loadFeed(1, done); // call done when variables are fed and tests can begin
-            });
+        afterEach(function(done) {
+
+            loadFeed(1);
+
+            feedTwo = $('.feed')[0].innerText;
+            done();
         });
 
         //change array content on load 
