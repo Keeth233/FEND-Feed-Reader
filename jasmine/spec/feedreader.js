@@ -127,21 +127,18 @@ $(function() {
         let feedOne;
         let feedTwo;
 
-        beforeEach(function(done) {
+           beforeEach(function(done) {
 
-            loadFeed(0);
+                loadFeed(0, function() {
+                    feedOne = $('.feed')[0].innerText;
 
-            feedOne = $('.feed')[0].innerText; //select feed class
-            done();
-        });
+                    loadFeed(1, function() {
+                        feedTwo = $('.feed')[0].innerText;
 
-        afterEach(function(done) {
-
-            loadFeed(1);
-
-            feedTwo = $('.feed')[0].innerText;
-            done();
-        });
+                        done(); // call done when variables are fed and tests can begin
+                    });
+                });
+            });
 
         //change array content on load 
         it('changes content when new feed loads', function(done) {
